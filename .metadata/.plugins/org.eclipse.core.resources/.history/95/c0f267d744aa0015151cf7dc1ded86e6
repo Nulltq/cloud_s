@@ -1,0 +1,19 @@
+package com.clouds.app.db;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
+public class CloudsDB {
+	public static final String DB_NAME = "cloud_s";//数据库名
+	
+	public static final int VERSION = 1;//数据库版本
+	
+	private static CloudsDB cloudsDB;
+	
+	private SQLiteDatabase db;
+	//构造方法私有化
+	private CloudsDB(Context context){
+		
+	}
+	
+}
