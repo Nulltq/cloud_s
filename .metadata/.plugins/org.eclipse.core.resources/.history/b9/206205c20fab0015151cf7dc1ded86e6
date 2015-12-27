@@ -1,0 +1,35 @@
+package com.clouds.app.activity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.clouds.app.db.CloudsDB;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class ChooseAreaActivity extends Activity {
+		
+	public final static int LEVEL_PROVINCE=0;
+	public final static int LEVEL_CITY=1;
+	public final static int LEVEL_COUTY=2;
+	
+	private ProgressDialog progressDialog;
+	private TextView textView;
+	private ListView listView;
+	private ArrayAdapter<String> adapter;
+	private CloudsDB cloudsDB;
+	private List<String> dataList = new ArrayList<String>();
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+
+}

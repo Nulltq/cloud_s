@@ -1,0 +1,11 @@
+ddms.logcat.auotmonitor.level=error
+ddms.logcat.automonitor.userprompt=true
+eclipse.preferences.version=1
+logcat.view.colsize.Application=189
+logcat.view.colsize.Level=35
+logcat.view.colsize.PID=66
+logcat.view.colsize.TID=66
+logcat.view.colsize.Tag=176
+logcat.view.colsize.Text=748
+logcat.view.colsize.Time=182
+logcat.view.filters.list=name\: 'com.clouds.app (Session Filter)', tag\: '', text\: '', pid\: '', app\: 'com.clouds.app', level\: 'info', 

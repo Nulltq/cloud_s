@@ -1,0 +1,5 @@
+package com.clouds.app.util;
+
+public class HttpCallbackListener {
+
+}

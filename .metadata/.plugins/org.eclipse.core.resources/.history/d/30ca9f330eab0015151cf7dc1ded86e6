@@ -1,0 +1,26 @@
+package com.clouds.app.activity;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class ChooseAreaActivity extends Activity {
+		
+	public final static int LEVEL_PROVINCE=0;
+	public final static int LEVEL_CITY=1;
+	public final static int LEVEL_COUTY=2;
+	
+	private ProgressDialog progressdialog;
+	private TextView textview;
+	private ListView listview;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+
+}

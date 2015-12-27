@@ -25,8 +25,8 @@ public class Province {
 		return ProvinceCode;
 	}
 
-	public void setProvinceCode(String provinceCode) {
-		ProvinceCode = provinceCode;
+	public void setProvinceCode(String array) {
+		ProvinceCode = array;
 	}
 
 }

@@ -1,0 +1,7 @@
+package com.clouds.app.activity;
+
+import Activity;
+
+public class ChooseAreaActivity extends Activity {
+
+}

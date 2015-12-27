@@ -1,0 +1,25 @@
+package com.clouds.app.util;
+
+import com.clouds.app.db.CloudsDB;
+import com.clouds.app.model.Province;
+
+import android.text.TextUtils;
+
+public class Utility {
+		public synchronized static boolean handleProvincesResponse(CloudsDB cloudsDB,String response) {
+			if (!TextUtils.isEmpty(response)){
+				String[] allProvinces = response.split("'");
+				if (allProvinces != null&allProvinces.length>0) {
+					for(String p : allProvinces){
+						String[] array = p.split("\\|");
+						Province province = new Province();
+						province.setProvinceCode(array[0]);
+						province.setProvinceName(array[1]);
+						//将解析出来的数据储存到Province表
+						cloudsDB.saveProvince(province);
+					}
+					return true;
+				}
+			}
+		}
+}

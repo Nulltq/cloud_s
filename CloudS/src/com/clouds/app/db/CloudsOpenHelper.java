@@ -7,48 +7,48 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class CloudsOpenHelper extends SQLiteOpenHelper {
 
-	/**
-	* Province±í½¨±íÓï¾ä
-	*/
-	public static final String CREATE_PROVINCE = "create talble Province ("
-					+"id integer primary key autoincrement, "
-					+"province_name text, "	
-					+"province_code text)";
-	/**
-	* City±í½¨±íÓï¾ä
-	*/
-	public static final String CREATE_CITY = "create table City ("
-					+"id integer primary key autoincrement, "
-			        +"city_name text, "
-					+"city_code text, "
-			        +"province_id integer)";
-	/**
-	* County±í½¨±íÓï¾ä
-	*/
-	public static final String CREATE_COUNTY = "create table County ("
-				    + "id integer primary key autoincrement, "
-				    + "county_name text, "
-				    + "county_code text, "
-   				    + "city_id integer)";
+    /**
+     * Provinceï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     */
+    public static final String CREATE_PROVINCE = "create table Province ("
+            + "id integer primary key autoincrement, "
+            + "province_name text, "
+            + "province_code text)";
+    /**
+     * Cityï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     */
+    public static final String CREATE_CITY = "create table City ("
+            + "id integer primary key autoincrement, "
+            + "city_name text, "
+            + "city_code text, "
+            + "province_id integer)";
+    /**
+     * Countyï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     */
+    public static final String CREATE_COUNTY = "create table County ("
+            + "id integer primary key autoincrement, "
+            + "county_name text, "
+            + "county_code text, "
+            + "city_id integer)";
 
-	public CloudsOpenHelper(Context context, String name, CursorFactory factory, int version) {
-		super(context, name, factory, version);
-		// TODO Auto-generated constructor stub
-	}
+    public CloudsOpenHelper(Context context, String name, CursorFactory factory, int version) {
+        super(context, name, factory, version);
+        // TODO Auto-generated constructor stub
+    }
 
-	@Override
-	public void onCreate(SQLiteDatabase db) {
-		// TODO Auto-generated method stub
-		db.execSQL(CREATE_PROVINCE);//´´½¨Province±í
-		db.execSQL(CREATE_CITY);//´´½¨City±í
-		db.execSQL(CREATE_COUNTY);//´´½¨County±í
-		
-	}
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // TODO Auto-generated method stub
+        db.execSQL(CREATE_PROVINCE);//ï¿½ï¿½ï¿½ï¿½Provinceï¿½ï¿½
+        db.execSQL(CREATE_CITY);//ï¿½ï¿½ï¿½ï¿½Cityï¿½ï¿½
+        db.execSQL(CREATE_COUNTY);//ï¿½ï¿½ï¿½ï¿½Countyï¿½ï¿½
 
-	@Override
-	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-		// TODO Auto-generated method stub
+    }
 
-	}
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // TODO Auto-generated method stub
+
+    }
 
 }

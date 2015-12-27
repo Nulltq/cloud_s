@@ -1,33 +1,33 @@
 package com.clouds.app.db;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.clouds.app.model.City;
-import com.clouds.app.model.County;
-import com.clouds.app.model.Province;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-public class CloudsDB {
-	public static final String DB_NAME = "cloud_s";// Êı¾İ¿âÃû
+import com.clouds.app.model.City;
+import com.clouds.app.model.County;
+import com.clouds.app.model.Province;
 
-	public static final int VERSION = 1;// Êı¾İ¿â°æ±¾
+import java.util.ArrayList;
+import java.util.List;
+
+public class CloudsDB {
+	public static final String DB_NAME = "cloud_s";// æ•°æ®åº“å
+
+	public static final int VERSION = 1;// æ•°æ®åº“ç‰ˆæœ¬
 
 	private static CloudsDB cloudsDB;
 
 	private SQLiteDatabase db;
 
-	// ¹¹Ôì·½·¨Ë½ÓĞ»¯
+	// æ„é€ æ–¹æ³•ç§æœ‰åŒ–
 	private CloudsDB(Context context) {
 		CloudsOpenHelper dbHelper = new CloudsOpenHelper(context, DB_NAME, null, VERSION);
 		db = dbHelper.getWritableDatabase();
 	}
 
-	// »ñÈ¡CloudsDBÊµÀı
+	// è·å–CloudsDBå®ä¾‹
 	public synchronized static CloudsDB getInstance(Context context) {
 		if (cloudsDB == null) {
 			cloudsDB = new CloudsDB(context);
@@ -35,7 +35,7 @@ public class CloudsDB {
 		return cloudsDB;
 	}
 
-	// ´¢´æProvinceÊµÀıµ½Êı¾İ¿â
+	// å‚¨å­˜Provinceå®ä¾‹åˆ°æ•°æ®åº“
 	public void saveProvince(Province province) {
 		if (province != null) {
 			ContentValues values = new ContentValues();
@@ -45,7 +45,7 @@ public class CloudsDB {
 		}
 	}
 
-	// ´ÓÊı¾İ¿â¶ÁÈ¡È«¹úÊ¡·İĞÅÏ¢
+	// ä»æ•°æ®åº“è¯»å–å…¨å›½çœä»½ä¿¡æ¯
 	public List<Province> loadProvinces() {
 		List<Province> list = new ArrayList<Province>();
 		Cursor cursor = db.query("Province", null, null, null, null, null, null);
@@ -61,7 +61,7 @@ public class CloudsDB {
 		return list;
 	}
 
-	// ´¢´æcityÊµÀıµ½Êı¾İ¿â
+	// å‚¨å­˜cityå®ä¾‹åˆ°æ•°æ®åº“
 	public void saveCity(City city) {
 		if (city != null) {
 			ContentValues values = new ContentValues();
@@ -72,7 +72,7 @@ public class CloudsDB {
 		}
 	}
 
-	// ´ÓÊı¾İ¿â¶ÁÈ¡Ä³Ê¡³ÇÊĞĞÅÏ¢
+	// ä»æ•°æ®åº“è¯»å–æŸçœåŸå¸‚ä¿¡æ¯
 	public List<City> loadCities(int provinceId) {
 		List<City> list = new ArrayList<City>();
 		Cursor cursor = db.query("City", null, "province_id = ?", new String[] { String.valueOf(provinceId) }, null,
@@ -90,7 +90,7 @@ public class CloudsDB {
 		return list;
 	}
 
-	// ´¢´æCountyÊµÀıµ½Êı¾İ¿â
+	// å‚¨å­˜Countyå®ä¾‹åˆ°æ•°æ®åº“
 	public void saveCounty(County county) {
 		if (county != null) {
 			ContentValues values = new ContentValues();
@@ -101,7 +101,7 @@ public class CloudsDB {
 		}
 	}
 
-	// ´ÓÊı¾İ¿â¶ÁÈ¡Ä³³ÇÊĞµÄÏØĞÅÏ¢
+	// ä»æ•°æ®åº“è¯»å–æŸåŸå¸‚çš„å¿ä¿¡æ¯
 	public List<County> loadCounties(int cityId) {
 		List<County> list = new ArrayList<County>();
 		Cursor cursor = db.query("County", null, "city_id = ?", new String[] { String.valueOf(cityId) }, null, null,
